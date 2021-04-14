@@ -45,6 +45,6 @@ $ MONGODB_CONNECTION_STRING="my-connection-string" ./if-devops-test
 
 ### Useful Resources
 
-* [Golang - Installation Guide]("https://golang.org/doc/install")
-* [Docker - Getting started]("https://docs.docker.com/get-started/)
-* [MongoDB - Docker Hub Image]("https://hub.docker.com/_/mongo")
+* [Golang - Installation Guide](https://golang.org/doc/install)
+* [Docker - Getting started](https://docs.docker.com/get-started)
+* [MongoDB - Docker Hub Image](https://hub.docker.com/_/mongo)
