@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  db:
+    image : mongo
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${PASSWORD}
+      - MONGO_INITDB_DATABASE=admin
+    volumes:
+      - ./database:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    networks:
+      backend:
+        ipv4_address: ${MONGO_IP}        
+  notes:
+    image: golang:latest
+    container_name: notesapp
+    environment:
+      - MONGODB_CONNECTION_STRING=mongodb://${USER}:${PASSWORD}@db:27017/admin     
+    build: .
+    ports:
+      - 8000:8000
+    networks:
+      backend:
+        ipv4_address: ${NOTES_IP}
+networks:
+  backend:
+    name: notes
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

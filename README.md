@@ -48,3 +48,13 @@ $ MONGODB_CONNECTION_STRING="my-connection-string" ./if-devops-test
 * [Golang - Installation Guide](https://golang.org/doc/install)
 * [Docker - Getting started](https://docs.docker.com/get-started)
 * [MongoDB - Docker Hub Image](https://hub.docker.com/_/mongo)
+
+### Solution Command
+
+This solution can be ran by using the following command: 
+
+```bash
+$ USER=<your-username> PASSWORD=<your-password> SUBNET=<chosen-cidr-range> NOTES_IP=<unique-accepted-ip-address> MONGO_IP=<unique-accepted-ip-address> docker-compose up -d
+```
+The ports are published, so you can just perform POST and GET to http://localhost:8000/notes to test. 
+
